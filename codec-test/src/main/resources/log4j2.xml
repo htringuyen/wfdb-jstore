@@ -1,0 +1,20 @@
+<Configuration>
+    <Appenders>
+        <Console name="Console">
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+            <PatternLayout pattern="[%-5level] [%t] %class{0} - %msg%n"/>
+        </Console>
+        <File name="MyFile" fileName="logs/app.log">
+            <PatternLayout>
+                <Pattern>"[%-5level] [%t] %class{0} - %msg%n"</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="ERROR">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <logger name="io" level="INFO">
+        </logger>
+    </Loggers>
+</Configuration>

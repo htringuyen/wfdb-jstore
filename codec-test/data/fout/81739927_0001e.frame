@@ -1,0 +1,5 @@
+1 Frame Header: FrameHeader: BlockSize=1280 SampleRate=96000 Channels=3 ChannelAssignment=0 BPS=16 SampleNumber=0
+	Frame Data FLACSubframe_Fixed: Order=1 PartitionOrder=0 WastedBits=2 warmup[0]=-8192
+	Frame Data FLACSubframe_Fixed: Order=1 PartitionOrder=0 WastedBits=2 warmup[0]=-8192
+	Frame Data FLACSubframe_Fixed: Order=1 PartitionOrder=0 WastedBits=2 warmup[0]=-8192
+	Frame Footer: -15240

@@ -1,0 +1,3 @@
+StreamInfo: BlockSize=4096-4096 FrameSize=2839-11090 SampleRate=96000 Channels=3 BPS=16 TotalSamples=5725440
+VendorString 'reference libFLAC 1.3.2 20170101'
+VorbisComment (count=0)
