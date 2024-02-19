@@ -3,3 +3,6 @@
 
 # Ignore Gradle build output directory
 build
+
+codec-test/data
+record-store/data
