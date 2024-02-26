@@ -11,14 +11,14 @@ import java.net.URI;
 public class DatabaseInfo {
     private final String name;
     private final String version;
-    private final URI localHome;
-    private final URI remoteHome;
+    private final URI localRoot;
+    private final URI remoteRoot;
 
-    private DatabaseInfo(String name, String version, URI localHome, URI remoteHome) {
+    private DatabaseInfo(String name, String version, URI localRoot, URI remoteRoot) {
         this.name = name;
         this.version = version;
-        this.localHome = localHome;
-        this.remoteHome = remoteHome;
+        this.localRoot = localRoot;
+        this.remoteRoot = remoteRoot;
     }
 
     /**
@@ -38,35 +38,35 @@ public class DatabaseInfo {
     }
 
     /**
-     * Return URI that points to local root directory of the database.
+     * Return URI that points to local home directory of the database.
      * @return URI that points to local root directory of the database
      */
-    public URI localUri() {
-        return localHome.resolve(name + "/").resolve( version + "/");
+    public URI localHome() {
+        return localRoot.resolve(name + "/").resolve( version + "/");
     }
 
     /**
      * Return URI that points to remote root directory of the database.
      * @return URI that points to remote root directory of the database
      */
-    public URI remoteUri() {
-        return remoteHome.resolve(name + "/").resolve(version + "/");
+    public URI remoteHome() {
+        return remoteRoot.resolve(name + "/").resolve(version + "/");
     }
 
     /**
      * Return URI that points to local home directory of all database.
      * @return URI that points to local home directory of all database
      */
-    public URI localHome() {
-        return localHome;
+    public URI localRoot() {
+        return localRoot;
     }
 
     /**
      * Return URI that points to remote home directory of all database.
      * @return URI that points to remote home directory of all database
      */
-    public URI remoteHome() {
-        return remoteHome;
+    public URI remoteRoot() {
+        return remoteRoot;
     }
 
     @Override

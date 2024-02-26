@@ -2,19 +2,14 @@
     <Appenders>
         <Console name="Console">
             <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
-            <PatternLayout pattern="[%-5level] [%t] %class{0} - %msg%n"/>
+            <PatternLayout disableAnsi="false"  pattern="%highlight{[%-5level] [%t] %class{0} - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=blue, DEBUG=green bold, TRACE=blue}"/>
         </Console>
-        <File name="MyFile" fileName="logs/app.log">
-            <PatternLayout>
-                <Pattern>"[%-5level] [%t] %class{0} - %msg%n"</Pattern>
-            </PatternLayout>
-        </File>
     </Appenders>
     <Loggers>
         <Root level="ERROR">
             <AppenderRef ref="Console"/>
         </Root>
-        <logger name="io" level="INFO">
+        <logger name="io.graphys" level="INFO">
         </logger>
     </Loggers>
 </Configuration>

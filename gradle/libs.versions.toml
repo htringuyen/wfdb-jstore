@@ -9,6 +9,7 @@ spring-ver = "6.1.3"
 reactor-core-ver = "3.6.2"
 jflac-ver = "1.5.2"
 lombok-ver = "1.18.30"
+commons-io-ver = "2.15.1"
 
 [libraries]
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit-jupiter-ver" }
@@ -26,3 +27,5 @@ spring-test = { group = "org.springframework", name = "spring-test", version.ref
 jflac-codec = { group = "org.jflac", name = "jflac-codec", version.ref = "jflac-ver"}
 
 lombok = {group = "org.projectlombok", name = "lombok", version.ref = "lombok-ver"}
+
+commons-io = {group = "commons-io", name = "commons-io", version.ref = "commons-io-ver"}

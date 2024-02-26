@@ -1,12 +1,14 @@
 package io.graphys.wfdbjstore;
 
+import java.time.LocalDateTime;
+import java.util.List;
 
 public interface Record {
-    public DatabaseInfo getDbInfo();
+    SignalInfo[] getSignalInfo();
 
-    public String getId();
+    String getName();
 
-    public RecordInfo getRecordInfo();
+    LocalDateTime getBaseTime();
 
-    public SignalInfo[] getSignalInfo();
+    double getSampFreq();
 }

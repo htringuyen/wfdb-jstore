@@ -1,7 +1,7 @@
 package io.graphys.wfdbjstore;
 
-import org.jflac.io.RandomFileInputStream;
 import org.junit.jupiter.api.Test;
+import org.kc7bfi.jflac.io.RandomFileInputStream;
 
 import java.io.*;
 import java.util.concurrent.Executors;
@@ -203,6 +203,33 @@ public class JavaIOTest extends BaseTest {
         }
         catch (InterruptedException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    void testConcurrentReadFile() throws InterruptedException {
+        var inName = "data/input/81739927_0008e.dat";
+        var es = Executors.newVirtualThreadPerTaskExecutor();
+        for (int i = 0; i < 1000; i++) {
+            es.submit(() -> {
+                try (var in = new FileInputStream(inName)) {
+                    var buffer = new byte[4096];
+                    int bytesRead;
+                    while ((bytesRead = in.read(buffer)) != -1) {
+                        //doHeavyComputationOnBytes(buffer);
+                    }
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+        es.shutdown();
+        if (es.awaitTermination(10, TimeUnit.SECONDS)) {
+            logger.info("Readers still uncompleted but es terminated.");
+        }
+        else {
+            logger.info("All readers completed.");
         }
     }
 }
